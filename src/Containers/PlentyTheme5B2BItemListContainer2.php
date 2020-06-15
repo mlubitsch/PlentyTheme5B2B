@@ -1,13 +1,13 @@
 <?php
 
-namespace PlentyTheme5\Containers;
+namespace PlentyTheme5B2B\Containers;
 
 use Plenty\Plugin\Templates\Twig;
 
-class PlentyTheme5ItemListContainer2
+class PlentyTheme5B2BItemListContainer2
 {
     public function call(Twig $twig, $arg):string
     {
-        return $twig->render('PlentyTheme5::Containers.ItemLists.ItemList2', ["item" => $arg[0]]);
+        return $twig->render('PlentyTheme5B2B::Containers.ItemLists.ItemList2', ["item" => $arg[0]]);
     }
 }
