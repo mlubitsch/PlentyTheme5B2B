@@ -1,0 +1,37 @@
+{
+    "version"           :   "1.0.6",
+    "name"              :   "PlentyTheme5B2B",
+    "pluginIcon"        :   "icon_plugin_xs.png",
+    "authorIcon"        :   "icon_author_xs.png",
+    "description"       :   "",
+    "namespace"         :   "PlentyTheme5B2B",
+    "author"            :   "plentysystems AG",
+    "type"              :   "theme",
+    "require"           :   {
+                                "Ceres":"~5.0"
+                            },
+    "serviceProvider"   :   "PlentyTheme5B2B\\Providers\\PlentyTheme5B2BServiceProvider",
+    "dataProviders"     :
+    [
+        {
+            "key"           :"PlentyTheme5B2B\\Containers\\PlentyTheme5B2BContainer",
+            "name"          :"Stylesheet",
+            "description"   :"Add changes to the CSS file"
+        },
+        {
+            "key"           :"PlentyTheme5B2B\\Containers\\PlentyTheme5B2BItemListContainer1",
+            "name"          :"First item list",
+            "description"   :"Display a configurable list of items in your online store"
+        },
+        {
+            "key"           :"PlentyTheme5B2B\\Containers\\PlentyTheme5B2BItemListContainer2",
+            "name"          :"Second item list",
+            "description"   :"Display a configurable list of items in your online store"
+        },
+        {
+            "key"           :"PlentyTheme5B2B\\Containers\\PlentyTheme5B2BItemListContainer3",
+            "name"          :"Third item list",
+            "description"   :"Display a configurable list of items in your online store"
+        }
+    ]
+}
