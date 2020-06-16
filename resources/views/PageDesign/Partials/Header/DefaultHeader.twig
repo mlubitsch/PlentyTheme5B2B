@@ -37,16 +37,12 @@
                                 <div class="controls">
                                     <ul id="controlsList" class="controls-list mb-0 d-flex list-inline pl-2 pl-sm-1 pl-md-0">
                                         <li class="list-inline-item control-user">
-                                            <user-login-handler>
-                                                <a class="nav-link" data-toggle="modal">
-                                                    <i class="fa fa-user mr-0 mr-sm-1" aria-hidden="true"></i>
-                                                    <span class="d-none d-sm-inline">{{ trans("Ceres::Template.login") }}</span>
-                                                </a>
-                                                <a class="nav-link" data-toggle="modal">
-                                                    <i class="fa fa-user-plus mr-0 mr-sm-1" aria-hidden="true"></i>
-                                                    <span class="d-none d-sm-inline">{{ trans("Ceres::Template.loginRegister") }}</span>
-                                                </a>
-                                            </user-login-handler>
+                                            <div class="position-relative">
+                                                <div>
+                                                    <a href="/{% lang %}/login/" class="nav-link"><i aria-hidden="true" class="fa fa-user mr-1"></i> <span class="d-none d-sm-inline">Anmelden</span></a> <span class="pipe"></span> 
+                                                    <a href="/{% lang %}/b2b-register/" class="nav-link"><i aria-hidden="true" class="fa fa-user-plus mr-1"></i> <span class="d-none d-sm-inline">Registrieren</span></a>
+                                                </div>
+                                            </div>
                                         </li>
                                         <li class="list-inline-item dropdown control-languages">
                                             <a class="nav-link"
@@ -208,7 +204,7 @@
                                                     <hr>
                                                 </div>
 
-                                                {% set languageList = services.webstoreConfigurationRepository.getWebstoreConfiguration().getActiveLanguageList() %}
+                                                {% set languageList = services.webstoreConfigurationRepository.getActiveLanguageList() %}
                                                 {% set languageUrls = services.url.getLanguageURLs() %}
                                                 <ul class="row">
                                                     {% for language in languageList %}
