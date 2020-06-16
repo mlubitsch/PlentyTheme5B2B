@@ -121,7 +121,7 @@ div:not(.top-bar) > .page-header > div > .cmp-search-box{
 }
 #page-body{
     background-color: white;
-    margin-top: 126px;
+    margin-top: 155px;
 }
 .wrapper-main{
     /* background-color: #2b2b2b; */
@@ -291,9 +291,11 @@ nav.navbar.megamenu{
         display: none !important;
     }
     .categorie-subnav div {
-        width: 32% !important;
-        
-    }        
+        width: 32% !important;        
+    }   
+    #page-body{
+        margin-top: 126px;
+    }     
 }
 @media screen and (min-width: 768px) {
     
