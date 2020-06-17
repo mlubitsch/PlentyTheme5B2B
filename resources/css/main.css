@@ -27,7 +27,9 @@
     background-color: #131313;
     padding: 3px;
 }
-
+.top-headline a{
+    color:white;
+}
 .widget-full-width,
 .widget-cfour-slider {
     width: 100vw;
