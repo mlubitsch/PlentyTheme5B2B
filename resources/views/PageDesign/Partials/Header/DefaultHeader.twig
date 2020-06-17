@@ -39,8 +39,30 @@
                                         <li class="list-inline-item control-user">
                                             <div class="position-relative">
                                                 <div>
+                                                {% if frontend.Account.getIsAccountLoggedIn %}    
+                                                                                            
+                                                    <div id="login-change">
+                                                        <div class="dropdown position-static show">
+                                                
+                                                            <a href="#" id="accountMenuList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-boundary="window" class="dropdown-toggle"><i aria-hidden="true" class="fa fa-user mr-1 d-sm-none"></i> <span class="hidden-xs-down">                                
+                                                            {% if userObject.firstName|length > 0 and userObject.lastName|length > 0 %}                                
+                                                                {{ trans("Ceres::Template.myAccountHello", {"username": userObject.firstName ~ " " ~ userObject.lastName}) }}
+                                                            {% else %}
+                                                                {{ trans("Ceres::Template.myAccountHello", {"username": userObject.email}) }}
+                                                            {% endif %}
+                                                            </span></a> 
+                                                            <div class="account-menu dropdown-menu dropdown-menu-right small m-0 p-0 show" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 64px, 0px);">
+                                                                <div aria-labelledby="accountMenuList" class="list-group">
+                                                                    <a href="/my-account/" class="list-group-item small"><i class="fa fa-user"></i> {{ trans("Ceres::Template.myAccount") }}</a> 
+                                                                    <a href="#" class="list-group-item small"><i class="fa fa-sign-out"></i> {{ trans("Ceres::Template.myAccountLogout") }}</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% else %}
                                                     <a href="/{{ lang }}/login/" class="nav-link"><i aria-hidden="true" class="fa fa-user mr-1"></i> <span class="d-none d-sm-inline">{{ trans("Ceres::Template.login") }}</span></a> <span class="pipe"></span> 
                                                     <a href="/{{ lang }}/b2b-register/" class="nav-link"><i aria-hidden="true" class="fa fa-user-plus mr-1"></i> <span class="d-none d-sm-inline">{{ trans("Ceres::Template.loginRegister") }}</span></a>
+                                                {% endif %}
                                                 </div>
                                             </div>
                                         </li>
