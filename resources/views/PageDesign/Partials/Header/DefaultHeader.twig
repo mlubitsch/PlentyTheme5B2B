@@ -2,6 +2,7 @@
 
 {% set companyLogo  = config("Ceres.header.company_logo") %}
 {% set companyName  = trans("Ceres::Template.headerCompanyName") %}
+{% set userObject   = services.customer.getContact() %}
 
 <header id="page-header" class="fixed-top default-header d-print-none">
     <div class="top-headline">
@@ -51,10 +52,10 @@
                                                                 {{ trans("Ceres::Template.myAccountHello", {"username": userObject.email}) }}
                                                             {% endif %}
                                                             </span></a> 
-                                                            <div class="account-menu dropdown-menu dropdown-menu-right small m-0 p-0 show" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 64px, 0px);">
+                                                            <div class="account-menu dropdown-menu dropdown-menu-right small m-0 p-0" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 64px, 0px);">
                                                                 <div aria-labelledby="accountMenuList" class="list-group">
-                                                                    <a href="/my-account/" class="list-group-item small"><i class="fa fa-user"></i> {{ trans("Ceres::Template.myAccount") }}</a> 
-                                                                    <a href="#" class="list-group-item small"><i class="fa fa-sign-out"></i> {{ trans("Ceres::Template.myAccountLogout") }}</a>
+                                                                    <a href="/{{ lang }}/my-account/" class="list-group-item small"><i class="fa fa-user"></i> {{ trans("Ceres::Template.myAccount") }}</a> 
+                                                                    <a href="#" class="list-group-item small" v-logout><i class="fa fa-sign-out"></i> {{ trans("Ceres::Template.myAccountLogout") }}</a>
                                                                 </div>
                                                             </div>
                                                         </div>
